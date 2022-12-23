@@ -1,4 +1,4 @@
-> try this [new template](https://github.com/rizkimcitra/zippy-react) with fole-based routing!
+> PS: try this [new template](https://github.com/rizkimcitra/zippy-react) with file-based routing!
 
 
 # <p align="center">⚙️ Stravital</p>
