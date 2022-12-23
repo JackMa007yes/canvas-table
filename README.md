@@ -1,3 +1,6 @@
+> try this [new template](https://github.com/rizkimcitra/zippy-react) with fole-based routing!
+
+
 # <p align="center">⚙️ Stravital</p>
 
 <p align="center">Kickstart your Web Application with React, Vite and Tailwind CSS.
