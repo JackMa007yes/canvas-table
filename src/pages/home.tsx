@@ -1,38 +1,34 @@
-import { Button, Image, Link, UnderlineLink } from '@/components'
+import TableStage from '@/components/table/TableStage'
 
-import react_icon from '@/assets/react.svg'
-import { useTheme } from '@/hooks'
 import { twclsx } from '@/utils'
 
-import { HiMoon, HiSun } from 'react-icons/hi'
-import { IoLogoGithub } from 'react-icons/io5'
+import originData from '../app/data.ts'
+
+const data = (function () {
+  let res: object[] = []
+  for (let i = 0; i < 400; i++) {
+    res = res.concat(originData.entries)
+  }
+  return res
+})()
 
 const Home: React.FunctionComponent = () => {
-  const { theme, toggleTheme } = useTheme()
-
   return (
-    <section className={twclsx('inline-flex flex-col items-center justify-center gap-4')}>
-      <Image src={react_icon} alt='React' className='w-16 h-16 react animate-spin' />
-      <h1 className='bg-clip-text text-transparent dark:text-transparent bg-gradient-to-r from-primary-5 to-secondary-5'>
-        Stravital
+    <div className='w-screen h-screen flex flex-col justify-center items-center pt-10'>
+      <h1 className='mb-4 text-secondary-4' style={{ color: 'rgb(254 240 138)' }}>
+        一个基于canvas的高性能表格简单实现😎
       </h1>
-      <p className='text-center'>Kickstart your Web Application with React, Vite and Tailwind CSS.</p>
-
-      <div className='flex items-center justify-center gap-2'>
-        <Button onClick={toggleTheme} className='p-0 h-8 w-8'>
-          {theme === 'dark' ? <HiSun /> : <HiMoon />}
-        </Button>
-
-        <Link
-          to='https://github.com/rizkimcitra/stravital'
-          className={twclsx('h-8 w-8', 'p-0 hover:ring rounded-lg transition-all', 'text-main-7 dark:text-main-3 ')}
-        >
-          <IoLogoGithub />
-        </Link>
-      </div>
-
-      <UnderlineLink to='/foo'>See 404</UnderlineLink>
-    </section>
+      <h5 className='mb-6'>
+        老板再也不用担心我的性能啦，先渲染个<span className='text-3xl font-bold animate-bounce inline-block'>50万</span>
+        行试试
+      </h5>
+      <section
+        className={twclsx('inline-flex flex-col items-center justify-center gap-4 h-4/5')}
+        style={{ width: '980px' }}
+      >
+        <TableStage width={980} height={600} data={data} />
+      </section>
+    </div>
   )
 }
 

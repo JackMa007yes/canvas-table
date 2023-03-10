@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    overflow: hidden;
+  }
   h1 {
     @apply font-primary text-2xl font-bold md:text-4xl text-main-7 dark:text-main-2;
   }
