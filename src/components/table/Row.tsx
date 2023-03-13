@@ -24,7 +24,6 @@ export default function Row({ data, index }: Props) {
               fill='white'
               fontSize={14}
               ellipsis={true}
-              key={index + '_text'}
             />
           </>
         )
